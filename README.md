@@ -2,11 +2,11 @@
 
 <div align="center">
 
-![Progress](https://img.shields.io/badge/Overall%20Progress-0%25-red)
-![Tasks](https://img.shields.io/badge/Tasks-0%2F57%20Completed-orange)
+![Progress](https://img.shields.io/badge/Overall%20Progress-7%25-red)
+![Tasks](https://img.shields.io/badge/Tasks-4%2F57%20Completed-orange)
 ![Phase](https://img.shields.io/badge/Current%20Phase-1%20of%205-blue)
 ![Status](https://img.shields.io/badge/Status-Active-green)
-![Last Update](https://img.shields.io/badge/Last%20Update-2024--10--22-lightgrey)
+![Last Update](https://img.shields.io/badge/Last%20Update-2025--10--22-lightgrey)
 
 **"4,523개를 70% 정확도로 하는 것보다, 100개를 95% 정확도로"**
 
@@ -14,49 +14,48 @@
 
 ## 📊 Project Dashboard
 
-| Phase | Status | Progress | Tasks | Target | Key Deliverable |
-|-------|--------|----------|-------|--------|-----------------|
-| **[Phase 1: Data Prep](./planning/phase1_data_prep.md)** | 🏗️ In Progress | ![0%](https://progress-bar.dev/0) | 0/7 | Week 1 | `top_100_drugs.csv` |
-| **[Phase 2: Collection Setup](./planning/phase2_collection.md)** | ⏳ Pending | ![0%](https://progress-bar.dev/0) | 0/16 | Week 1 | Flutter App + Kit |
-| **[Phase 3: Photo Collection](./planning/phase3_photo_collection.md)** | 🔜 Not Started | ![0%](https://progress-bar.dev/0) | 0/8 | Week 2 | 1,000+ photos |
-| **[Phase 4: Model Training](./planning/phase4_training.md)** | 🔜 Not Started | ![0%](https://progress-bar.dev/0) | 0/14 | Week 2-3 | `model.onnx` |
-| **[Phase 5: Deployment](./planning/phase5_deployment.md)** | 🔜 Not Started | ![0%](https://progress-bar.dev/0) | 0/12 | Week 3 | Production API |
+| Phase | Status | Progress | Tasks | Key Deliverable |
+|-------|--------|----------|-------|-----------------|
+| **[Phase 1: Data Prep](./planning/phase1_data_prep.md)** | 🏗️ In Progress | ![57%](https://progress-bar.dev/57) | 4/7 | `top_100_drugs.csv` |
+| **[Phase 2: Collection Setup](./planning/phase2_collection.md)** | ⏳ Pending | ![0%](https://progress-bar.dev/0) | 0/16 | Flutter App + Kit |
+| **[Phase 3: Photo Collection](./planning/phase3_photo_collection.md)** | 🔜 Not Started | ![0%](https://progress-bar.dev/0) | 0/8 | 1,000+ photos |
+| **[Phase 4: Model Training](./planning/phase4_training.md)** | 🔜 Not Started | ![0%](https://progress-bar.dev/0) | 0/14 | `model.onnx` |
+| **[Phase 5: Deployment](./planning/phase5_deployment.md)** | 🔜 Not Started | ![0%](https://progress-bar.dev/0) | 0/12 | Production API |
 
 ## 🎯 Project Goal
 
 한국 약국에서 가장 많이 사용되는 **100개 약품**에 집중하여 **95% 이상의 정확도**를 달성하는 실용적인 AI 모델 구축
 
-## 📌 Current Focus (2024-10-22)
+## 📌 Current Status
 
-### 🔥 Immediate Tasks (Today)
+### ✅ Completed Today
 
 ```
-[ ] K-CODE와 EDI 매핑 테이블 구축
-[ ] 약국 사용량 데이터 분석 시작
-[ ] GitHub 프로젝트 문서 구조 완성
+[x] K-CODE와 EDI 매핑 테이블 구축 - 4,397개 매핑 성공
+[x] 약국 사용량 데이터 분석 - 562개 약품 사용량 매칭
+[x] GitHub 프로젝트 문서 구조 완성
+[x] Excel 작업용 데이터 준비 - drug_selection_workspace.xlsx 생성
 ```
 
-### 📅 This Week's Milestones
+### 🎯 Next Steps
 
-| Day | Focus Area | Key Deliverables |
-|-----|------------|------------------|
-| **화 (10/22)** | 데이터 분석 시작 | K-CODE/EDI 매핑 |
-| **수 (10/23)** | 약품 선정 | Top 200 리스트 |
-| **목 (10/24)** | 촬영 Kit 구매 | 장비 확보 |
-| **금 (10/25)** | Flutter 앱 개발 | 기본 UI 완성 |
-| **토 (10/26)** | 파일럿 테스트 | 30개 약품 촬영 |
-| **일 (10/27)** | 데이터 검증 | QC 시스템 구축 |
+```
+[ ] Excel에서 상위 200개 중 촬영 가능한 100개 약품 선정
+[ ] 최종 100개 약품 메타데이터 JSON 생성
+[ ] Flutter 앱 개발 시작
+[ ] 촬영 장비 구매 리스트 작성
+```
 
 ## 📋 Master TODO List (57 Tasks)
 
 <details>
-<summary><b>Phase 1: 데이터 준비 [0/7]</b> (클릭하여 펼치기)</summary>
+<summary><b>Phase 1: 데이터 준비 [4/7]</b> (클릭하여 펼치기)</summary>
 
-- [ ] K-CODE와 EDI 매핑 테이블 구축 - kcode_label_map.json과 drugs_master.csv 연결
-- [ ] 약국 사용량 CSV 파일 로드 및 EDI별 사용 빈도 계산
-- [ ] 현재 데이터셋 4,523개 K-CODE 중 EDI 매핑된 항목 필터링
-- [ ] 사용량 기준 상위 200개 약품 추출 및 CSV 생성
-- [ ] Excel 파일 생성 - PTP/연질캡슐/소형약품 표시 컬럼 추가
+- [x] K-CODE와 EDI 매핑 테이블 구축 - kcode_label_map.json과 drugs_master.csv 연결
+- [x] 약국 사용량 CSV 파일 로드 및 EDI별 사용 빈도 계산
+- [x] 현재 데이터셋 4,523개 K-CODE 중 EDI 매핑된 항목 필터링
+- [x] 사용량 기준 상위 200개 약품 추출 및 Excel 생성
+- [ ] Excel 파일 검토 - PTP/연질캡슐/소형약품 표시
 - [ ] 수동 검토 - 제외 약품 마킹 및 최종 100개 선정
 - [ ] 최종 100개 약품 메타데이터 JSON 생성 (K-CODE, EDI, 약품명, 외형정보)
 
@@ -158,7 +157,8 @@
 
 | Category | Metric | Current | Target | Status |
 |----------|--------|---------|--------|--------|
-| **Coverage** | 약품 선정 | 0/100 | 100 | 🔴 |
+| **Coverage** | 약품 선정 | 200 선별 | 100 최종 | 🟡 |
+| **Data** | EDI 매핑 | 562 | 100+ | ✅ |
 | **Data** | 실사진 수집 | 0 | 1,000+ | 🔴 |
 | **Quality** | A등급 비율 | - | >70% | ⏳ |
 | **Model** | Top-1 정확도 | - | >85% | ⏳ |
@@ -171,14 +171,16 @@
 git clone https://github.com/helious23/pillsnap-narrow-model.git
 cd pillsnap-narrow-model
 
-# View current tasks
-cat planning/current_sprint.md
-
-# Check progress
-python scripts/calculate_progress.py
+# Setup environment
+python3.11 -m venv .venv
+source .venv/bin/activate
+pip install pandas openpyxl
 
 # Run data preparation
-python scripts/data_prep/select_top_drugs.py
+python scripts/data_prep/prepare_drug_selection.py
+
+# Check generated files
+ls -la artifacts/
 ```
 
 ## 📁 Project Structure
@@ -228,15 +230,18 @@ graph TD
 
 | Date | Commit | Description | Author |
 |------|--------|-------------|--------|
-| 2024-10-22 | `initial` | 🎉 프로젝트 시작 및 구조 설정 | @helious23 |
+| 2025-10-22 | `bd5a4fb` | feat: 약품 선정을 위한 데이터 추출 스크립트 구현 | @helious23 |
+| 2025-10-22 | `51ccef1` | docs: Phase별 상세 계획 문서 추가 | @helious23 |
+| 2025-10-22 | `4971c81` | feat: narrow inference server 구조 구현 | @helious23 |
+| 2025-10-22 | `initial` | 🎉 프로젝트 시작 및 구조 설정 | @helious23 |
 
 ## 🏆 Milestones
 
-- [ ] **Milestone 1**: 100개 약품 선정 완료 (Week 1)
-- [ ] **Milestone 2**: 촬영 시스템 구축 완료 (Week 1)
-- [ ] **Milestone 3**: 1,000장 사진 수집 완료 (Week 2)
-- [ ] **Milestone 4**: 모델 학습 완료 (Week 2-3)
-- [ ] **Milestone 5**: 프로덕션 배포 (Week 3)
+- [ ] **Milestone 1**: 100개 약품 선정 완료
+- [ ] **Milestone 2**: 촬영 시스템 구축 완료
+- [ ] **Milestone 3**: 1,000장 사진 수집 완료
+- [ ] **Milestone 4**: 모델 학습 완료
+- [ ] **Milestone 5**: 프로덕션 배포
 
 ## 👥 Contributors
 
@@ -260,6 +265,6 @@ This project is proprietary and confidential.
 
 **[📋 View Full Task Board](./planning/README.md)** | **[📊 Progress Report](./progress/daily_log.md)**
 
-*Last Updated: 2024-10-22 17:30 KST*
+*Last Updated: 2025-10-22 20:30 KST*
 
 </div>
