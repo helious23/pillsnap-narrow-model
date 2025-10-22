@@ -242,6 +242,14 @@ graph TD
 
 - **@helious23** - Project Lead
 
+## 🔗 관련 저장소
+
+- **메인 프로젝트**: https://github.com/helious23/pillsnap-narrow-model
+- **추론 서버**: https://github.com/helious23/pillsnap-inference-narrow
+- **로컬 경로**:
+  - 학습/데이터: `/home/max16/pillsnap-narrow-model/`
+  - 추론 서버: `/home/max16/pillsnap_inference_narrow/`
+
 ## 📄 License
 
 This project is proprietary and confidential.
