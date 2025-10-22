@@ -3,7 +3,7 @@
 ## 🎯 목표
 한국 약국에서 가장 많이 사용되는 **상위 100개 약품**을 과학적으로 선정하여 집중 학습 대상 확정
 
-## 📅 일정: 2024-10-22 ~ 2024-10-23 (2일)
+## 📅 일정: 2025-10-22 ~ 2025-10-23 (2일)
 
 ## 🔄 워크플로우
 
@@ -20,14 +20,18 @@ graph TD
 
 ## 📋 상세 작업
 
-### Task 1: K-CODE와 EDI 매핑 테이블 구축
+### Task 1: K-CODE와 EDI 매핑 테이블 구축 ✅
 
 **목적**: 현재 보유한 4,523개 K-CODE와 약국 사용량 데이터의 EDI 코드 연결
 
 **입력 파일**:
-- `/home/max16/pillsnap_data/kcode_label_map.json` - K-CODE와 약품명 매핑
-- `/home/max16/pillsnap_bff/data/drugs_master.csv` - K-CODE, EDI, 약품명 포함
-- `약국_사용량_데이터.csv` - EDI 코드별 사용량 (사용자 제공 필요)
+- `/home/max16/pillsnap_inference/mapping/kcode_label_map.json` - K-CODE와 약품명 매핑
+- `/home/max16/drug_list/actual_list.xlsx` - EDI 코드별 사용량 데이터
+- `/home/max16/drug_list/single_list.xlsx` - K-CODE 리스트
+
+**실제 결과** (2025-10-22):
+- ✅ 4,397개 K-CODE의 EDI 매핑 성공
+- ✅ 562개 약품의 실제 사용량 데이터 매칭
 
 **구현 스크립트**: `scripts/data_prep/build_kcode_edi_mapping.py`
 ```python
@@ -68,7 +72,7 @@ def build_mapping():
 
 ---
 
-### Task 2: 약국 사용량 CSV 파일 로드 및 EDI별 사용 빈도 계산
+### Task 2: 약국 사용량 CSV 파일 로드 및 EDI별 사용 빈도 계산 ✅
 
 **목적**: EDI 코드별 실제 약국 사용량 집계
 
@@ -95,7 +99,7 @@ def calculate_usage_frequency(usage_csv_path):
 
 ---
 
-### Task 3: 현재 데이터셋 4,523개 K-CODE 중 EDI 매핑된 항목 필터링
+### Task 3: 현재 데이터셋 4,523개 K-CODE 중 EDI 매핑된 항목 필터링 ✅
 
 **목적**: 실제 사용 데이터가 있는 약품만 필터링
 
@@ -131,7 +135,7 @@ def filter_available_kcodes(mapping, usage_df):
 
 ---
 
-### Task 4: 사용량 기준 상위 200개 약품 추출 및 CSV 생성
+### Task 4: 사용량 기준 상위 200개 약품 추출 및 Excel 생성 ✅
 
 **목적**: 과다 선정 후 수동 검토를 위한 후보군 생성
 
@@ -284,10 +288,10 @@ def auto_flag_exclusion(row):
 - 사용량 커버리지: 전체 처방의 70% 이상
 
 ### 체크포인트
-- [ ] K-CODE-EDI 매핑 완료
-- [ ] 사용량 데이터 로드 성공
-- [ ] 상위 200개 후보 추출
-- [ ] Excel 검토 파일 생성
+- [x] K-CODE-EDI 매핑 완료 (4,397개 매핑)
+- [x] 사용량 데이터 로드 성공 (1,746개 EDI)
+- [x] 상위 200개 후보 추출 (562개 사용량 매칭)
+- [x] Excel 검토 파일 생성 (drug_selection_workspace.xlsx)
 - [ ] 최종 100개 선정
 - [ ] 메타데이터 JSON 생성
 
