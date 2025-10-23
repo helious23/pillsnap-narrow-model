@@ -134,4 +134,139 @@
 
 ---
 
-*Last updated: 2025-10-22 20:30 KST*
+## 2025-10-23 (수요일)
+
+### ✅ 완료된 작업
+
+#### 09:00-14:00 | Phase 1 완료 - 100개 약품 최종 선정
+- [x] Excel 검토 및 수동 선정 작업
+  - 상위 200개 중 shootable 기준 필터링
+  - Y (촬영 용이): 92개, M (중간 난이도): 8개
+  - PTP 블리스터 포장, 소형 약품 제외
+
+- [x] 최종 메타데이터 생성
+  - `artifacts/top_100_metadata_final.json` 생성
+  - K-CODE, EDI, 약품명, 제조사, 사용량, 촬영난이도 포함
+  - 총 사용량: 1,784,622건, 평균: 17,846건
+
+- [x] 촬영 체크리스트 생성
+  - `scripts/capture_checklist.csv` 생성
+  - Front/Back 촬영 진행 상황 추적
+
+#### 14:00-18:00 | Phase 2 시작 - Supabase 백엔드 구축
+- [x] Supabase 스키마 설계
+  - `scripts/setup_supabase_final.sql` 작성
+  - capture_drugs_master: 100개 약품 마스터 데이터
+  - capture_real_photos: 촬영 사진 메타데이터
+  - capture_sessions: 촬영 세션 추적
+  - capture_background_colors: 배경색 정의
+
+- [x] MCP Supabase로 스키마 적용
+  - 테이블 생성 및 제약조건 설정
+  - RLS (Row Level Security) 정책 적용
+  - Storage bucket 설정
+
+- [x] 100개 약품 데이터 로드
+  - `scripts/load_drugs_to_supabase.py` 구현
+  - INSERT ON CONFLICT 로직으로 안전한 로드
+  - 100개 약품 데이터 Supabase 업로드 완료
+
+#### 15:00-20:00 | 실제 촬영 전략 수립
+- [x] 기존 데이터셋 구조 상세 분석
+  - 파일명 컨벤션: K-CODE_배경_조명_면_형태_앙각_회전각_크기.png
+  - 18단계 회전 (20도 간격), 4단계 앙각
+  - 약품당 1,296장 (3 조명 × 2 면 × 3 형태 × 4 앙각 × 18 회전)
+
+- [x] 촬영 조건 설계
+  - 배경: 5종 (손바닥, 나무, 흰색, 검은색, 패턴)
+  - 조명: 3단계 (LED 3, 5, 8)
+  - 앙각: 90도 고정 (수직)
+  - 회전: 8단계 (45도 간격)
+  - **약품당: 240장 (5×3×8×2)**
+  - **총: 24,000장 (100개 약품)**
+
+- [x] 배경 타입 추가
+  - Supabase에 5가지 실제 배경 추가
+  - skin_palm, wood_table, white, black, pattern_check
+
+- [x] 촬영 프로토콜 문서 작성
+  - `docs/capture_protocol.md` 작성 (448줄)
+  - 파일명 컨벤션, 폴더 구조
+  - 품질 검증 기준 (A/B/C 등급)
+  - 회전판 타이밍 자동화 로직
+  - 예상 소요 시간: 16일 (하루 8시간)
+
+### 📊 진행 통계
+
+| Phase | 진행률 | 완료 작업 | 전체 작업 |
+|-------|--------|-----------|-----------|
+| **전체** | 12% | 7/57 | 57 |
+| **Phase 1** | 100% | 7/7 | 7 ✅ |
+| **Phase 2** | 19% | 3/16 | 16 |
+| **Phase 3** | 0% | 0/8 | 8 |
+| **Phase 4** | 0% | 0/14 | 14 |
+| **Phase 5** | 0% | 0/12 | 12 |
+
+### 🎯 Phase 1 완료 요약
+
+**목표:** 100개 약품 선정 ✅
+**달성:**
+- 4,397개 K-CODE EDI 매핑
+- 562개 약품 사용량 매칭
+- 상위 200개 후보 추출
+- **최종 100개 선정 완료**
+- Supabase에 데이터 로드
+
+**선정 기준:**
+- 사용량 상위 200개 중 선별
+- 촬영 용이성 (Y: 92개, M: 8개)
+- 정제/경질캡슐 형태만 (PTP 블리스터 제외)
+
+### 📝 내일 계획 (2025-10-24)
+
+1. **오전 (09:00-12:00)**
+   - [ ] Flutter 프로젝트 생성 및 기본 구조
+   - [ ] Camera2 API 패키지 통합
+   - [ ] 권한 설정 (카메라, 저장소)
+
+2. **오후 (13:00-18:00)**
+   - [ ] 약품 선택 UI 구현
+   - [ ] Supabase 연동 (인증, 데이터 로드)
+   - [ ] 촬영 가이드 UI 프로토타입
+
+3. **저녁 (19:00-21:00)**
+   - [ ] 촬영 장비 구매 리스트 작성
+   - [ ] LED 스튜디오 박스, 회전판 검색
+
+### 💡 이슈 및 메모
+
+**Phase 1 완료 성과:**
+- ✅ 100개 약품 선정 완료
+- ✅ Supabase 백엔드 80% 완료
+- ✅ 촬영 전략 및 프로토콜 수립
+
+**Phase 2 진행 상황:**
+- Supabase: 3/4 완료 (75%)
+- Flutter 앱: 0/7 (시작 전)
+- 촬영 환경: 0/5 (시작 전)
+
+**다음 우선순위:**
+1. Flutter 앱 개발 시작
+2. 파일럿 테스트용 장비 구매
+3. 1개 약품으로 240장 테스트 촬영
+
+### 🔗 산출물
+
+**Phase 1:**
+- `artifacts/top_100_metadata_final.json` - 100개 약품 메타데이터
+- `scripts/capture_checklist.csv` - 촬영 진행 체크리스트
+
+**Phase 2:**
+- `scripts/setup_supabase_final.sql` - Supabase 스키마
+- `scripts/load_drugs_to_supabase.py` - 약품 데이터 로드
+- `scripts/supabase_load_drugs.sql` - SQL 로드 스크립트
+- `docs/capture_protocol.md` - 촬영 프로토콜 문서 (448줄)
+
+---
+
+*Last updated: 2025-10-23 20:15 KST*
